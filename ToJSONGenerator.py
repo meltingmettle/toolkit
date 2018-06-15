@@ -1,3 +1,7 @@
+#Toolkit!
+#Take in a block of SQL stored procedure parameter declaration and return a neatly formatted JSON conversion code block in C#.
+
+@Input
 """
         @RetrievalID int,
         @PrimaryAddress bit,
@@ -7,6 +11,8 @@
         @ZIP varchar(50)
         
 """
+
+@Output
 """
         StringBuilder builder = new StringBuilder();
         builder.Append("\"RetrievalID\":\"" + RetrievalID + "\",");
