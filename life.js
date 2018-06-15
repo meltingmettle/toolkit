@@ -1,3 +1,5 @@
+
+
 //This is an exhibit dedicated to one of my favorite decision-making algorithms of all time.  
 //Please admire this function and appreciate the randomless of life.
 
