@@ -24,9 +24,9 @@
 
 def DataMapperGenerator(add_attribute_stored_procedure_parameters):
     data = add_attribute_stored_procedure_parameters.replace("'", "").replace(",", "").split("@")[1:]
-    output = '{0} = reader["{0}"].toString(),'
+    output = '{0} = reader["{0}"].toString(),'                            #NOTE: "reader" is an variable object name.
     for x in range(len(data)):
         data[x] = output.format(data[x].strip().split(" ")[0])
         print(data[x])
-    print(data[x][0:-1])  #To print the last attribute without aforementioned pesky comma
+    print(data[x][0:-1])                                                  #To print the last attribute without aforementioned pesky comma
 
