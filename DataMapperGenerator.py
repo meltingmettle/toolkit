@@ -5,6 +5,8 @@
 #Copy and paste the params into Google Search bar or anything that will de-format, then throw it in as a parameter 
 #and enjoy your instantaenously generated beautiful DataMapper code. 
 
+#Designed to assist in extending software with tens or hundreds of instance attributes and object entities.
+
 """ EXAMPLE """
 
 #@Input
@@ -19,7 +21,7 @@
     Attr1 = sqloutput["Attr1"].toString(), 
     Attr2 = sqloutput["Attr2"].toString(),
     Attr3 = sqlobject["Attr3"].toString(),
-    Attr4 = sqlobject["Attr4"].toString(),
+    Attr4 = sqlobject["Attr4"].toString()
 """
 
 def DataMapperGenerator(add_attribute_stored_procedure_parameters):
