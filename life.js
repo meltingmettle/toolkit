@@ -1,6 +1,6 @@
 
 
-//This is an exhibit dedicated to one of the most famous decision-making algorithms of all time.  
+//This is an exhibit dedicated to the most famous decision-making algorithm of all time.  
 //Please admire this function and take a moment to appreciate the randomless of life.
 
 
