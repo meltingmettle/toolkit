@@ -1,3 +1,10 @@
+
+
+#Toolkit!
+#Pass in a SQL "insert" stored procedure, and DMG will output DataMapper format in C#. 
+#Copy and paste the params into Google Search bar or anything that will de-format, then throw it in as a parameter 
+#and enjoy your instantaenously generated beautiful DataMapper code. 
+
 """ EXAMPLE """
 
 #@Input
@@ -15,16 +22,11 @@
     Attr4 = sqlobject["Attr4"].toString(),
 """
 
-x = "@OID varchar(32),     @EquipmentID varchar(50),     @City varchar(50),   @FirstName varchar(100),     @LastName varchar(100),     @POName varchar(200),     @Timezone varchar(10),      @HomePhoneNumber varchar(20),     @CellPhoneNumber varchar(20),     @WorkPhoneNumber varchar(20),     @InputGroup varchar(100),     @Reason varchar(128),      @Comment varchar(1024),      @StartDate datetime,     @TerminationDate datetime, @StreetAddress varchar(50),     @State varchar(50),     @ZIP varchar(50), @EmergencyContactName varchar(200),     @EmergencyStreetAddress varchar(128),      @EmergencyCity varchar(50),      @EmergencyState varchar(50),      @EmergencyZip varchar(50),     @EmergencyPhone1 varchar(15),     @EmergencyPhone2 varchar(15)"
+def DataMapperGenerator(add_attribute_stored_procedure_parameters):
+    data = add_attribute_stored_procedure_parameters.replace("'", "").replace(",", "").split("@")[1:]
+    output = '{0} = reader["{0}"].toString(),'
+    for x in range(len(data)):
+        data[x] = output.format(data[x].strip().split(" ")[0])
+        print(data[x])
+    print(data[x][0:-1])  #To print the last attribute without aforementioned pesky comma
 
-def DataMapperGeneration(add_attribute_stored_procedure_parameters):
-    data = add_attribute_stored_procedure_parameters
-    attributelist = data.replace("'", "").replace(",", "").split("@")
-    for x in range(len(attributelist)):
-        attributelist[x] = attributelist[x].strip()
-        attributelist[x] = attributelist[x].split(" ")
-        if "varchar" in attributelist[x][1]:
-            attributelist[x][1] = "varchar"
-    return attributelist
-
-DataMapperGeneration(x)
