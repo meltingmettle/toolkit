@@ -3,6 +3,7 @@
 #Pass in the "insert" stored procedure, and DMG will output entity object implenetation. 
 #(SQL to C#)
 
+#Designed to assist in extending software with tens or hundreds of instance attributes and object entities.
 
 """ EXAMPLE """
 
@@ -12,6 +13,14 @@
     @Attr2 bit,
     @Attr3 varchar(50),
     @Attr4 varchar(50),
+"""
+
+"""
+   #C&P into Google Search Bar to remove formatting.
+   #Define and execute program into Jupyter Notebook or similar software.
+   >>>input = "@Attr1 int,     @Attr2 bit,     @Attr3 varchar(50),     @Attr4 varchar(50),"
+   >>>EntityGenerator(input)
+
 """
 #@Output
 """
