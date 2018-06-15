@@ -44,6 +44,8 @@ def EntityGenerator(add_attribute_stored_procedure_parameters):
             return "string"
         elif "bit" in x:
             return "int"
+        elif "datetime" in x:
+            return "DateTime"
         else:
             return x
         
@@ -51,5 +53,6 @@ def EntityGenerator(add_attribute_stored_procedure_parameters):
 		item = data[x].strip().split(" ")
         data[x] = "public " + UnsupportedTypeRemoval(item[1]) + " " + item[0] + "{get; set;}" 
         print(data[x])
+
 
 #Enjoy!
