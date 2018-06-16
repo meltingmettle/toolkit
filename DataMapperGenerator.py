@@ -9,7 +9,7 @@
 
 """ EXAMPLE """
 
-#@Input
+@Input
 """
     @Attr1 int,
     @Attr2 bit,
@@ -23,7 +23,7 @@
    >>>DataMapperGenerator(input)
 
 """
-#@Output
+@Output
 """
     Attr1 = sqloutput["Attr1"].toString(), 
     Attr2 = sqloutput["Attr2"].toString(),
