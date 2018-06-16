@@ -7,7 +7,7 @@
 
 """ EXAMPLE """
 
-#@Input
+@Input
 """
     @Attr1 int,
     @Attr2 bit,
@@ -22,7 +22,7 @@
    >>>EntityGenerator(input)
 
 """
-#@Output
+@Output
 """
     public int Attr1 { get; set; }
     public int Attr2 { get; set; }
