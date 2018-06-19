@@ -41,11 +41,11 @@ def EntityGenerator(add_attribute_stored_procedure_parameters):
     data = add_attribute_stored_procedure_parameters.replace("'", "").replace(",", "").split("@")[1:]
     def UnsupportedTypeRemoval(x):		#Helper function to manage data types which are unsupported in C#.  Not all-inclusive. 
         if "varchar" in x:
-            return "string"
+            return "String"
         elif "bit" in x:
-            return "int"
+            return "String"
         elif "datetime" in x:
-            return "DateTime"
+            return "String"
         else:
             return x
         
