@@ -39,19 +39,9 @@
 
 def EntityGenerator(add_attribute_stored_procedure_parameters):
     data = add_attribute_stored_procedure_parameters.replace("'", "").replace(",", "").split("@")[1:]
-    def UnsupportedTypeRemoval(x):		#Helper function to manage data types which are unsupported in C#.  Not all-inclusive. 
-        if "varchar" in x:
-            return "String"
-        elif "bit" in x:
-            return "String"
-        elif "datetime" in x:
-            return "String"
-        else:
-            return x
-        
     for x in range(len(data)):
 		item = data[x].strip().split(" ")
-        data[x] = "public " + UnsupportedTypeRemoval(item[1]) + " " + item[0] + "{get; set;}" 
+        data[x] = "public " + "String " + item[0] + "{get; set;}" 
         print(data[x])
 
 
