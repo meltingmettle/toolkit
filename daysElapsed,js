@@ -1,0 +1,9 @@
+    var daysElapsed = function (startDate) {
+        var start = startDate;
+        var startFormatted = moment(start, "MM/DD/YYYY").format('MM/DD/YYYY');
+        var startMomentDate = new Date(startFormatted);
+        var currentMomentDate = new Date();
+        var startMomentDateSeconds = b.getTime(); //Convert to seconds since 1970 for calculational purposes
+        var currentMomentDateSeconds = n.getTime();
+        return (currentMomentDateSeconds - startMomentDateSeconds) / 86400000; //One can also use an equality operator.  (EX return (...)/8640000 < d where d is some days)
+    }
